@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eb32c5c-aec5-450b-925d-9c350f608900" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/test/java/BitOperationsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Tranformation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/test/java/TranformationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" afterDir="false" />
     </list>
     <list id="04a6c78c-fb1a-4096-9649-10ff6c24270e" name="Changes by izabe" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,10 +41,42 @@
     "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "JUnit.All in View.executor": "Run",
+    "JUnit.BitOperationsTest.BitOperationsTest.executor": "Run",
+    "JUnit.BitOperationsTest.bigIntgerTest.executor": "Run",
+    "JUnit.BitOperationsTest.executor": "Run",
+    "JUnit.BitOperationsTest.testJoinAcrossByteBoundary.executor": "Run",
+    "JUnit.BitOperationsTest.testJoinBlocks.executor": "Run",
+    "JUnit.BitOperationsTest.testLeftShift.executor": "Run",
+    "JUnit.BitOperationsTest.testVoid.executor": "Run",
+    "JUnit.DesTest (1).executor": "Run",
     "JUnit.DesTest.DesTest.executor": "Run",
+    "JUnit.DesTest.debug.executor": "Run",
+    "JUnit.DesTest.debugT.executor": "Run",
     "JUnit.DesTest.executor": "Run",
     "JUnit.DesTest.getBitTest.executor": "Run",
+    "JUnit.DesTest.sBox.executor": "Run",
+    "JUnit.DesTest.sBoxGroup_przyklad_z_dokumentacji_FIPS.executor": "Run",
+    "JUnit.DesTest.sBoxTest.executor": "Run",
+    "JUnit.DesTest.sBoxTest2.executor": "Run",
+    "JUnit.DesTest.setSBoxs_S1_wiersz0_kol0_daje_14.executor": "Run",
     "JUnit.DesTest.shiftLeftTest.executor": "Debug",
+    "JUnit.DesTest.testDebugAll.executor": "Run",
+    "JUnit.DesTest.testDebugS8.executor": "Run",
+    "JUnit.DesTest.testFullEncode.executor": "Run",
+    "JUnit.DesTest.testPC1Transformation.executor": "Run",
+    "JUnit.DesTest.testPC2Transformation.executor": "Run",
+    "JUnit.DesTest.testRawLengths.executor": "Run",
+    "JUnit.DesTest.testSBoxGroup.executor": "Run",
+    "JUnit.DesTest.testSBoxS1SingleExample.executor": "Run",
+    "JUnit.DesTest.testSBoxsFullRound.executor": "Run",
+    "JUnit.DesTest.testSetSBoxs_S1.executor": "Run",
+    "JUnit.DesTest.testSetSBoxs_debug.executor": "Run",
+    "JUnit.DesTest.testSubKey1.executor": "Run",
+    "JUnit.DesTest.testSubKey2.executor": "Run",
+    "JUnit.DesTest.testSubKeysWithKnownExample.executor": "Run",
+    "JUnit.DesTest.testXorBitByBit.executor": "Run",
+    "JUnit.DesTest.testXorDebug.executor": "Run",
+    "JUnit.DesTest.testXorIsolated.executor": "Run",
     "JUnit.DesTest.tranformTest.executor": "Run",
     "JUnit.TranformationTest (1).executor": "Run",
     "JUnit.TranformationTest.executor": "Run",
@@ -53,7 +85,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "testowanie__asia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,55 +104,74 @@
       <recent name="C:\Users\JOrli\OneDrive\Pulpit\Sems 4\POD_KRYPTO\Kryptografia\View\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DesTest.tranformTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.kryptografia.Main" />
-      <module name="Model" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BitOperationsTest.BitOperationsTest">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <module name="View" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DesTest.DesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BitOperationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Model" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DesTest" />
-      <option name="METHOD_NAME" value="DesTest" />
+      <option name="MAIN_CLASS_NAME" value="BitOperationsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BitOperationsTest.BitOperationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Model" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BitOperationsTest" />
+      <option name="METHOD_NAME" value="BitOperationsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DesTest.getBitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Model" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DesTest" />
-      <option name="METHOD_NAME" value="getBitTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.kryptografia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.kryptografia" />
+      <option name="MAIN_CLASS_NAME" value="pl.kryptografia.DesTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DesTest.testFullEncode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.kryptografia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.kryptografia" />
+      <option name="MAIN_CLASS_NAME" value="pl.kryptografia.DesTest" />
+      <option name="METHOD_NAME" value="testFullEncode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DesTest.shiftLeftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DesTest.testXorBitByBit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Model" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DesTest" />
-      <option name="METHOD_NAME" value="shiftLeftTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DesTest.tranformTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Model" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DesTest" />
-      <option name="METHOD_NAME" value="tranformTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.kryptografia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.kryptografia" />
+      <option name="MAIN_CLASS_NAME" value="pl.kryptografia.DesTest" />
+      <option name="METHOD_NAME" value="testXorBitByBit" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,19 +179,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DesTest.getBitTest" />
-      <item itemvalue="JUnit.DesTest.tranformTest" />
-      <item itemvalue="JUnit.DesTest.DesTest" />
-      <item itemvalue="JUnit.DesTest.shiftLeftTest" />
+      <item itemvalue="JUnit.BitOperationsTest" />
+      <item itemvalue="JUnit.BitOperationsTest.BitOperationsTest" />
+      <item itemvalue="JUnit.DesTest" />
+      <item itemvalue="JUnit.DesTest.testFullEncode" />
+      <item itemvalue="JUnit.DesTest.testXorBitByBit" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DesTest.tranformTest" />
-        <item itemvalue="JUnit.DesTest.getBitTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.DesTest.shiftLeftTest" />
-        <item itemvalue="JUnit.DesTest.DesTest" />
+        <item itemvalue="JUnit.BitOperationsTest.BitOperationsTest" />
+        <item itemvalue="JUnit.BitOperationsTest" />
+        <item itemvalue="JUnit.DesTest.testFullEncode" />
+        <item itemvalue="JUnit.DesTest.testXorBitByBit" />
+        <item itemvalue="JUnit.DesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -162,6 +213,13 @@
       <workItem from="1773851182737" duration="14973000" />
       <workItem from="1773948807038" duration="49000" />
       <workItem from="1773960177176" duration="6664000" />
+      <workItem from="1774045302337" duration="11147000" />
+      <workItem from="1774058411236" duration="1701000" />
+      <workItem from="1774096977699" duration="2179000" />
+      <workItem from="1774178086088" duration="543000" />
+      <workItem from="1774216201181" duration="300000" />
+      <workItem from="1774279272027" duration="14343000" />
+      <workItem from="1774652035827" duration="5202000" />
     </task>
     <servers />
   </component>
@@ -180,6 +238,16 @@
           <url>file://$PROJECT_DIR$/untitled/src/main/java/pl/kryptografia/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/test/java/BitOperationsTest.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/test/java/BitOperationsTest.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Main.java</url>
