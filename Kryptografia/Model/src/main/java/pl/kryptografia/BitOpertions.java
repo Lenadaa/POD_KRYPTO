@@ -9,14 +9,6 @@ public class BitOpertions {
         return (byte) valBit;
     }
 
-    public byte[] xorArray(byte[] a, byte[] b) {
-        byte[] result = new byte[a.length];
-        for (int i = 0; i < a.length; i++) {
-            result[i] = (byte) (a[i] ^ b[i]);
-        }
-        return result;
-    }
-
     public void setBitAt(byte[] data, int pos, int value) {
         int byteIdx = pos / 8;
         int bitIdx = 7 - (pos % 8);

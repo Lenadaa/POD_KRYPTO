@@ -1,7 +1,9 @@
 package pl.kryptografia;
 import pl.kryptografia.BitOpertions;
 
+import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Des {
     private BitOpertions bits = new BitOpertions();
@@ -71,6 +73,20 @@ public class Des {
     };
     public byte[] getIP() {
         return IP;
+    }
+
+    public byte[] randKey(){
+        BigInteger bigInteger = new BigInteger(64,1,new Random());
+        byte[] k = bigInteger.toByteArray();
+        return k;
+    }
+    public String byteToHex(byte[] num) {
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : num) {
+            hexString.append(Character.forDigit((b >> 4) & 0xF, 16));
+            hexString.append(Character.forDigit((b & 0xF), 16));
+        }
+        return hexString.toString();
     }
     private final byte[] sBox = {
             14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7, // S1
@@ -198,6 +214,33 @@ public class Des {
         byte[] R = bits.splitBit(messegeIP, 32, 64);
 
         for (int i = 0; i < 16; i++) {
+            byte[] previousR = R;
+            byte[] expanded  = xorFunction(R, keys[i]);
+            byte[] sBoxed    = sBoxs(expanded);
+            byte[] fResult   = tranformArray(sBoxed, P);
+
+            byte[] newR = new byte[L.length];
+            for (int j = 0; j < 32; j++) {
+                int b1 = bits.getBitAt(L, j);
+                int b2 = bits.getBitAt(fResult, j);
+                bits.setBitAt(newR, j, b1 ^ b2);
+            }
+
+            R = newR;
+            L = previousR;
+        }
+
+        byte[] R16L16 = bits.joinBlockOfBits(R, 32, L, 32);
+        return tranformArray(R16L16, IP_INV);
+    }
+    public byte[] decode(byte[] message, byte[] key) {
+        byte[] messegeIP = tranformArray(message, IP);
+        byte[][] keys = subKeys(key);
+
+        byte[] L = bits.splitBit(messegeIP, 0, 32);
+        byte[] R = bits.splitBit(messegeIP, 32, 64);
+
+        for (int i = 15; i >= 0; i--) {
             byte[] previousR = R;
             byte[] expanded  = xorFunction(R, keys[i]);
             byte[] sBoxed    = sBoxs(expanded);

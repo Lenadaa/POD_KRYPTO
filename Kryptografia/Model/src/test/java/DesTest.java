@@ -188,4 +188,28 @@ public class DesTest {
 
         assertEquals("85E813540F0AB405", bitsToHex(C, 64));
     }
+
+    @Test
+    public void testDecode() {
+        byte[] M = hexToBytes("0123456789ABCDEF");
+        byte[] K = hexToBytes("133457799BBCDFF1");
+
+        byte[] C = des.encode(M, K);
+        byte[] decoded = des.decode(C, K);
+
+        assertEquals("0123456789ABCDEF", bitsToHex(decoded, 64));
+    }
+
+    @Test
+    public void testEncodeDecodeMessage() {
+        byte[] K = hexToBytes("133457799BBCDFF1");
+
+        String message = "Brainrot";
+        byte[] M = message.getBytes();
+
+        byte[] C = des.encode(M, K);
+        byte[] decoded = des.decode(C, K);
+
+        assertEquals(message, new String(decoded));
+    }
 }

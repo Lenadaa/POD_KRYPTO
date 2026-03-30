@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(&quot;glorp.png&quot;); -fx-background-size: 100%;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.kryptografia.view.Controller">
+   <children>
+      <Button fx:id="randomKey" layoutX="248.0" layoutY="124.0" mnemonicParsing="false" onAction="#generateKey" prefHeight="23.0" prefWidth="104.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2;" text="Wygeneruj klucz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button id="encode" fx:id="encodeFx" layoutX="248.0" layoutY="230.0" mnemonicParsing="false" onAction="#encode" prefHeight="23.0" prefWidth="104.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Zaszyfruj" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <Button id="decode" fx:id="decodeFx" layoutX="248.0" layoutY="280.0" mnemonicParsing="false" onAction="#decode" prefHeight="23.0" prefWidth="104.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Odszyfruj" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+      <TextField id="messageToEncode" fx:id="messageToEncode" layoutX="23.0" layoutY="195.0" prefHeight="120.0" prefWidth="185.0" promptText="Tekst jawny" />
+      <TextField id="textFieldEncoded" fx:id="messageToDecode" layoutX="389.0" layoutY="195.0" prefHeight="120.0" prefWidth="185.0" promptText="Szyfrogram" />
+      <Text fill="#51ff00" layoutX="257.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DES">
+         <font>
+            <Font name="System Bold" size="47.0" />
+         </font>
+      </Text>
+      <TextField id="keyField" fx:id="genetorKey" editable="false" layoutX="239.0" layoutY="91.0" prefHeight="25.0" prefWidth="122.0" promptText="Klucz heksadecymalnie" />
+      <TextField fx:id="fileSave" layoutX="23.0" layoutY="355.0" prefHeight="18.0" prefWidth="122.0" promptText="Nazwa pliku z tekstem" />
+      <Button fx:id="fileToSave" layoutX="152.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Zapisz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Text fill="#51ff00" layoutX="254.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wartość klucza">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#51ff00" layoutX="375.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Otwórz plik zawierający tekst szyfrogram">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fileEncoded" layoutX="389.0" layoutY="163.0" prefHeight="18.0" prefWidth="122.0" promptText="Nazwa pliku z szyfrogramem" />
+      <Button fx:id="fileChoose1" layoutX="518.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Zapisz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Text fill="#51ff00" layoutX="26.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zapisz plik zawierający tekst jawny">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <TextField fx:id="file" layoutX="23.0" layoutY="163.0" prefHeight="25.0" prefWidth="122.0" promptText="Nazwa pliku z tekstem" />
+      <Button fx:id="fileOpen" layoutX="148.0" layoutY="163.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Otwórz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <TextField fx:id="fileEncodedToSave" layoutX="389.0" layoutY="355.0" prefHeight="18.0" prefWidth="122.0" promptText="Nazwa pliku z tekstem" />
+      <Button fx:id="fileEncodeOpen" layoutX="518.0" layoutY="163.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Otwórz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Text fill="#51ff00" layoutX="23.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Otwórz plik zawierający tekst jawny">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#51ff00" layoutX="377.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zapisz plik zawierający tekst szyfrogram">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
