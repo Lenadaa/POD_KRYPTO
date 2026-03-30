@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eb32c5c-aec5-450b-925d-9c350f608900" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Tranformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/src/test/java/TranformationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Model/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Messege.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/test/java/MessegeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/View/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/src/main/resources/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/resources/hello-view.fxml" afterDir="false" />
     </list>
+    <list id="04a6c78c-fb1a-4096-9649-10ff6c24270e" name="Changes by izabe" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -36,17 +48,64 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "Application.DesTest.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "JUnit.All in View.executor": "Run",
+    "JUnit.BitOperationsTest.BitOperationsTest.executor": "Run",
+    "JUnit.BitOperationsTest.bigIntgerTest.executor": "Run",
+    "JUnit.BitOperationsTest.executor": "Run",
+    "JUnit.BitOperationsTest.testJoinAcrossByteBoundary.executor": "Run",
+    "JUnit.BitOperationsTest.testJoinBlocks.executor": "Run",
+    "JUnit.BitOperationsTest.testLeftShift.executor": "Run",
+    "JUnit.BitOperationsTest.testVoid.executor": "Run",
+    "JUnit.DesTest (1).executor": "Run",
+    "JUnit.DesTest.DesTest.executor": "Run",
+    "JUnit.DesTest.debug.executor": "Run",
+    "JUnit.DesTest.debugT.executor": "Run",
+    "JUnit.DesTest.executor": "Run",
+    "JUnit.DesTest.getBitTest.executor": "Run",
+    "JUnit.DesTest.sBox.executor": "Run",
+    "JUnit.DesTest.sBoxGroup_przyklad_z_dokumentacji_FIPS.executor": "Run",
+    "JUnit.DesTest.sBoxTest.executor": "Run",
+    "JUnit.DesTest.sBoxTest2.executor": "Run",
+    "JUnit.DesTest.setSBoxs_S1_wiersz0_kol0_daje_14.executor": "Run",
+    "JUnit.DesTest.shiftLeftTest.executor": "Debug",
+    "JUnit.DesTest.testDebugAll.executor": "Run",
+    "JUnit.DesTest.testDebugS8.executor": "Run",
+    "JUnit.DesTest.testDecode.executor": "Run",
+    "JUnit.DesTest.testEncodeDecodeMessage.executor": "Run",
+    "JUnit.DesTest.testFullEncode.executor": "Run",
+    "JUnit.DesTest.testPC1Transformation.executor": "Run",
+    "JUnit.DesTest.testPC2Transformation.executor": "Run",
+    "JUnit.DesTest.testRawLengths.executor": "Run",
+    "JUnit.DesTest.testSBoxGroup.executor": "Run",
+    "JUnit.DesTest.testSBoxS1SingleExample.executor": "Run",
+    "JUnit.DesTest.testSBoxsFullRound.executor": "Run",
+    "JUnit.DesTest.testSetSBoxs_S1.executor": "Run",
+    "JUnit.DesTest.testSetSBoxs_debug.executor": "Run",
+    "JUnit.DesTest.testSubKey1.executor": "Run",
+    "JUnit.DesTest.testSubKey2.executor": "Run",
+    "JUnit.DesTest.testSubKeysWithKnownExample.executor": "Run",
+    "JUnit.DesTest.testXorBitByBit.executor": "Run",
+    "JUnit.DesTest.testXorDebug.executor": "Run",
+    "JUnit.DesTest.testXorIsolated.executor": "Run",
+    "JUnit.DesTest.tranformTest.executor": "Run",
+    "JUnit.MessegeTest.debugTest.executor": "Run",
+    "JUnit.MessegeTest.executor": "Run",
+    "JUnit.MessegeTest.testEncodeDecodeFullMessage.executor": "Run",
+    "JUnit.MessegeTest.testEncodeDecodeFullMessage2.executor": "Run",
+    "JUnit.MessegeTest.testEncodeDecodeMessageWithRandomKey.executor": "Run",
     "JUnit.TranformationTest (1).executor": "Run",
     "JUnit.TranformationTest.executor": "Run",
     "JUnit.TranformationTest.stringToByteTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "testowanie__asia",
+    "last_opened_file_path": "C:/Users/JOrli/OneDrive/Pulpit/Sems 4/POD_KRYPTO/Kryptografia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,9 +113,9 @@
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/JOrli/OneDrive/Pulpit/Sems 4/POD_KRYPTO/Kryptografia/Model/src/main/java/pl/kryptografia/Main.java",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pathVariables",
+    "project.structure.proportion": "0.15456507",
+    "project.structure.side.proportion": "0.44712645",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -65,26 +124,14 @@
       <recent name="C:\Users\JOrli\OneDrive\Pulpit\Sems 4\POD_KRYPTO\Kryptografia\View\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TranformationTest (1)">
-    <configuration name="DesTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.kryptografia.DesTest" />
-      <module name="Model" />
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.kryptografia.view.App" />
+      <module name="View" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$JAVAFX25$&quot; --add-modules javafx.controls,javafx.fxml " />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.kryptografia.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.kryptografia.Main" />
-      <module name="Model" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.kryptografia.*" />
+          <option name="PATTERN" value="pl.kryptografia.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,41 +145,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TranformationTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BitOperationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Model" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TranformationTest" />
+      <option name="MAIN_CLASS_NAME" value="BitOperationsTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TranformationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Model" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="java.*" />
+          <option name="PATTERN" value="pl.kryptografia.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="java" />
-      <option name="MAIN_CLASS_NAME" value="java.TranformationTest" />
+      <option name="PACKAGE_NAME" value="pl.kryptografia" />
+      <option name="MAIN_CLASS_NAME" value="pl.kryptografia.DesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TranformationTest.stringToByteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MessegeTest.testEncodeDecodeFullMessage2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Model" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="java" />
-      <option name="MAIN_CLASS_NAME" value="java.TranformationTest" />
-      <option name="METHOD_NAME" value="stringToByteTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MessegeTest" />
+      <option name="METHOD_NAME" value="testEncodeDecodeFullMessage2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MessegeTest.testEncodeDecodeMessageWithRandomKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Model" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MessegeTest" />
+      <option name="METHOD_NAME" value="testEncodeDecodeMessageWithRandomKey" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,29 +191,21 @@
     </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
-      <item itemvalue="Application.DesTest" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.TranformationTest" />
-      <item itemvalue="JUnit.TranformationTest (1)" />
-      <item itemvalue="JUnit.TranformationTest.stringToByteTest" />
+      <item itemvalue="Application.App" />
+      <item itemvalue="JUnit.MessegeTest.testEncodeDecodeFullMessage2" />
+      <item itemvalue="JUnit.MessegeTest.testEncodeDecodeMessageWithRandomKey" />
+      <item itemvalue="JUnit.BitOperationsTest" />
+      <item itemvalue="JUnit.DesTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TranformationTest (1)" />
-        <item itemvalue="JUnit.TranformationTest" />
-        <item itemvalue="JUnit.TranformationTest.stringToByteTest" />
-        <item itemvalue="Application.DesTest" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.MessegeTest.testEncodeDecodeMessageWithRandomKey" />
+        <item itemvalue="JUnit.MessegeTest.testEncodeDecodeFullMessage2" />
+        <item itemvalue="JUnit.BitOperationsTest" />
+        <item itemvalue="JUnit.DesTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.29188.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.29188.11" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -171,7 +214,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773851181668</updated>
-      <workItem from="1773851182737" duration="7100000" />
+      <workItem from="1773851182737" duration="14973000" />
+      <workItem from="1773948807038" duration="49000" />
+      <workItem from="1773960177176" duration="6664000" />
+      <workItem from="1774045302337" duration="11147000" />
+      <workItem from="1774058411236" duration="1701000" />
+      <workItem from="1774096977699" duration="2179000" />
+      <workItem from="1774178086088" duration="543000" />
+      <workItem from="1774216201181" duration="300000" />
+      <workItem from="1774279272027" duration="14343000" />
+      <workItem from="1774652035827" duration="5202000" />
+      <workItem from="1774699431873" duration="5379000" />
+      <workItem from="1774708269207" duration="14000" />
+      <workItem from="1774708290434" duration="558000" />
+      <workItem from="1774708874442" duration="27000" />
+      <workItem from="1774708903127" duration="36000" />
+      <workItem from="1774708951262" duration="1353000" />
+      <workItem from="1774710348810" duration="176000" />
+      <workItem from="1774711044468" duration="2914000" />
+      <workItem from="1774890355016" duration="3492000" />
     </task>
     <servers />
   </component>
@@ -191,7 +252,53 @@
           <line>13</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/test/java/BitOperationsTest.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/test/java/BitOperationsTest.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/test/java/DesTest.java</url>
+          <line>204</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Model/src/test/java/DesTest.java</url>
+          <line>203</line>
+          <properties class="pl.kryptografia.DesTest" method="testEncodeDecodeMessage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Model/src/test/java/MessegeTest.java</url>
+          <line>18</line>
+          <properties class="MessegeTest" method="debugTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Model/src/test/java/MessegeTest.java</url>
+          <line>24</line>
+          <properties class="MessegeTest" method="testEncodeDecodeFullMessage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
