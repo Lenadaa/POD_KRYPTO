@@ -15,22 +15,25 @@ public class FileManager {
     }
 
     public static void saveEncoded(String filename, byte[][] encoded) throws IOException {
-        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(filename))) {
-            dos.writeInt(encoded.length);
-            for (byte[] block : encoded) {
-                dos.write(block);
+        StringBuilder sb = new StringBuilder();
+        for (byte[] block : encoded) {
+            for (byte b : block) {
+                sb.append(String.format("%02x", b));
             }
         }
+        Files.writeString(Path.of(filename), sb.toString());
     }
 
     public static byte[][] loadEncoded(String filename) throws IOException {
-        try (DataInputStream dis = new DataInputStream(new FileInputStream(filename))) {
-            int blockCount = dis.readInt();
-            byte[][] blocks = new byte[blockCount][8];
-            for (int i = 0; i < blockCount; i++) {
-                blocks[i] = dis.readNBytes(8);
+        String text = Files.readString(Path.of(filename));
+        int blockCount = text.length() / 16; //8 bajtów = 16 znaków
+        byte[][] blocks = new byte[blockCount][8];
+        for (int i = 0; i < blockCount; i++) {
+            for (int j = 0; j < 8; j++) {
+                String byteStr = text.substring(i * 16 + j * 2, i * 16 + j * 2 + 2);
+                blocks[i][j] = (byte) Integer.parseInt(byteStr, 16);
             }
-            return blocks;
         }
+        return blocks;
     }
 }

@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eb32c5c-aec5-450b-925d-9c350f608900" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Messege.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/src/test/java/MessegeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/View/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/resources/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/resources/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glorp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zaszyfrowany_glorp" beforeDir="false" />
     </list>
     <list id="04a6c78c-fb1a-4096-9649-10ff6c24270e" name="Changes by izabe" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,14 +20,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;izg00nia&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Lenadaa/POD_KRYPTO.git&quot;,
+    &quot;accountId&quot;: &quot;e382d708-9dc5-408a-836e-4a27b9d34781&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -46,79 +48,85 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Run",
-    "Application.DesTest.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.All in View.executor": "Run",
-    "JUnit.BitOperationsTest.BitOperationsTest.executor": "Run",
-    "JUnit.BitOperationsTest.bigIntgerTest.executor": "Run",
-    "JUnit.BitOperationsTest.executor": "Run",
-    "JUnit.BitOperationsTest.testJoinAcrossByteBoundary.executor": "Run",
-    "JUnit.BitOperationsTest.testJoinBlocks.executor": "Run",
-    "JUnit.BitOperationsTest.testLeftShift.executor": "Run",
-    "JUnit.BitOperationsTest.testVoid.executor": "Run",
-    "JUnit.DesTest (1).executor": "Run",
-    "JUnit.DesTest.DesTest.executor": "Run",
-    "JUnit.DesTest.debug.executor": "Run",
-    "JUnit.DesTest.debugT.executor": "Run",
-    "JUnit.DesTest.executor": "Run",
-    "JUnit.DesTest.getBitTest.executor": "Run",
-    "JUnit.DesTest.sBox.executor": "Run",
-    "JUnit.DesTest.sBoxGroup_przyklad_z_dokumentacji_FIPS.executor": "Run",
-    "JUnit.DesTest.sBoxTest.executor": "Run",
-    "JUnit.DesTest.sBoxTest2.executor": "Run",
-    "JUnit.DesTest.setSBoxs_S1_wiersz0_kol0_daje_14.executor": "Run",
-    "JUnit.DesTest.shiftLeftTest.executor": "Debug",
-    "JUnit.DesTest.testDebugAll.executor": "Run",
-    "JUnit.DesTest.testDebugS8.executor": "Run",
-    "JUnit.DesTest.testDecode.executor": "Run",
-    "JUnit.DesTest.testEncodeDecodeMessage.executor": "Run",
-    "JUnit.DesTest.testFullEncode.executor": "Run",
-    "JUnit.DesTest.testPC1Transformation.executor": "Run",
-    "JUnit.DesTest.testPC2Transformation.executor": "Run",
-    "JUnit.DesTest.testRawLengths.executor": "Run",
-    "JUnit.DesTest.testSBoxGroup.executor": "Run",
-    "JUnit.DesTest.testSBoxS1SingleExample.executor": "Run",
-    "JUnit.DesTest.testSBoxsFullRound.executor": "Run",
-    "JUnit.DesTest.testSetSBoxs_S1.executor": "Run",
-    "JUnit.DesTest.testSetSBoxs_debug.executor": "Run",
-    "JUnit.DesTest.testSubKey1.executor": "Run",
-    "JUnit.DesTest.testSubKey2.executor": "Run",
-    "JUnit.DesTest.testSubKeysWithKnownExample.executor": "Run",
-    "JUnit.DesTest.testXorBitByBit.executor": "Run",
-    "JUnit.DesTest.testXorDebug.executor": "Run",
-    "JUnit.DesTest.testXorIsolated.executor": "Run",
-    "JUnit.DesTest.tranformTest.executor": "Run",
-    "JUnit.MessegeTest.debugTest.executor": "Run",
-    "JUnit.MessegeTest.executor": "Run",
-    "JUnit.MessegeTest.testEncodeDecodeFullMessage.executor": "Run",
-    "JUnit.MessegeTest.testEncodeDecodeFullMessage2.executor": "Run",
-    "JUnit.MessegeTest.testEncodeDecodeMessageWithRandomKey.executor": "Run",
-    "JUnit.TranformationTest (1).executor": "Run",
-    "JUnit.TranformationTest.executor": "Run",
-    "JUnit.TranformationTest.stringToByteTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "testowanie__asia",
-    "last_opened_file_path": "C:/Users/JOrli/OneDrive/Pulpit/Sems 4/POD_KRYPTO/Kryptografia",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/JOrli/OneDrive/Pulpit/Sems 4/POD_KRYPTO/Kryptografia/Model/src/main/java/pl/kryptografia/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15456507",
-    "project.structure.side.proportion": "0.44712645",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DesTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in View.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BitOperationsTest.BitOperationsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BitOperationsTest.bigIntgerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BitOperationsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BitOperationsTest.testJoinAcrossByteBoundary.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BitOperationsTest.testJoinBlocks.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BitOperationsTest.testLeftShift.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BitOperationsTest.testVoid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.DesTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.debug.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.debugT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.getBitTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.sBox.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.sBoxGroup_przyklad_z_dokumentacji_FIPS.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.sBoxTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.sBoxTest2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.setSBoxs_S1_wiersz0_kol0_daje_14.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.shiftLeftTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.DesTest.testDebugAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testDebugS8.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testDecode.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testEncodeDecodeMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testFullEncode.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testPC1Transformation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testPC2Transformation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testRawLengths.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testSBoxGroup.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testSBoxS1SingleExample.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testSBoxsFullRound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testSetSBoxs_S1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testSetSBoxs_debug.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testSubKey1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testSubKey2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testSubKeysWithKnownExample.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testXorBitByBit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testXorDebug.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.testXorIsolated.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DesTest.tranformTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MessegeTest.debugTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MessegeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MessegeTest.testEncodeDecodeFullMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MessegeTest.testEncodeDecodeFullMessage2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MessegeTest.testEncodeDecodeMessageWithRandomKey.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TranformationTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TranformationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TranformationTest.stringToByteTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.View [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/izabe/Desktop/Informatyka Stosowana I/2026 (IV semestr)/kryptografia/POD_KRYPTO/Kryptografia&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/JOrli/OneDrive/Pulpit/Sems 4/POD_KRYPTO/Kryptografia/Model/src/main/java/pl/kryptografia/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15456507&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.44712645&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\JOrli\OneDrive\Pulpit\Sems 4\POD_KRYPTO\Kryptografia\View\src\main\resources" />
@@ -206,6 +214,13 @@
         <item itemvalue="JUnit.DesTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
