@@ -1,9 +1,7 @@
 package pl.kryptografia.view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.stage.FileChooser;
 import pl.kryptografia.Des;
@@ -37,15 +35,50 @@ public class Controller {
     @FXML private RadioButton radioText;
     @FXML private RadioButton radioFile;
 
+    @FXML private File selectedFile1;
+    @FXML private File selectedEncodedFile;
+
+    private final ToggleGroup modeGroup = new ToggleGroup();
 
     private Des des = new Des();
     private byte[][] encoded;
     private byte[] K;
     private File selectedFile;
+
+    @FXML
+    public void initialize() {
+        radioText.setToggleGroup(modeGroup);
+        radioFile.setToggleGroup(modeGroup);
+        radioText.setSelected(true);
+    }
+
+    @FXML
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private boolean validateKey() {
+        if (K == null || K.length == 0) {
+            showAlert("Brak klucza", "Najpierw wygeneruj klucz.");
+            return false;
+        }
+        return true;
+    }
+
     @FXML
     public void encode(ActionEvent event) {
+        if(!validateKey()) return;
+
         if(radioText.isSelected()){
             String message = messageToEncode.getText();
+            if (message == null || message.trim().isEmpty()) {
+                showAlert("Brak tekstu", "Wpisz tekst do zaszyfrowania.");
+                return;
+            }
             Messege messege = new Messege(message);
             encoded = messege.encodeMessage(K);
             StringBuilder sb = new StringBuilder();
@@ -55,7 +88,8 @@ public class Controller {
         }
         if(radioFile.isSelected()){
             if(selectedFile == null){
-                errorMess.setText("Nie wybrano pliku");
+                showAlert("Brak pliku", "Wybierz plik do zaszyfrowania.");
+                return;
             }
             FileDao dao = new FileDao(selectedFile.getPath());
             try {
@@ -69,17 +103,24 @@ public class Controller {
 
     @FXML
     public void decode(ActionEvent event) {
+        if(!validateKey()) return;
+
         if(radioText.isSelected()){
             String message = messageToDecode.getText();
+            if (message.trim().isEmpty()) {
+                showAlert("Brak szyfrogramu", "Pole szyfrogramu jest puste..");
+                return;
+            }
             Messege mess = new Messege(message);
             String decoded = mess.decodeMessage(encoded, K);
             messageToEncode.setText(decoded);
         }
         if(radioFile.isSelected()){
-            if(selectedFile == null){
-                errorMess.setText("Nie wybrano pliku");
+            if(selectedEncodedFile == null){
+                showAlert("Brak pliku", "Wybierz plik do odszyfrowania.");
+                return;
             }
-            FileDao dao = new FileDao(selectedFile.getPath());
+            FileDao dao = new FileDao(selectedEncodedFile.getPath());
             try {
                 dao.read(K);
             } catch (IOException e) {
@@ -99,57 +140,65 @@ public class Controller {
     public void openFile(ActionEvent event) {
         FileChooser fileChoose = new FileChooser();
         File file1 = fileChoose.showOpenDialog(fileOpen.getScene().getWindow());
-        file.setText(file1.getPath());
         if(file1 == null){
             return;
         }
+        file.setText(file1.getPath());
         selectedFile = file1;
     }
     @FXML
     public void openFileDecode(ActionEvent event) {
         FileChooser fileChoose = new FileChooser();
+        fileChoose.setTitle("Wybierz plik do odszyfrowania");
         File file1 = fileChoose.showOpenDialog(fileOpen.getScene().getWindow());
-        fileEncoded.setText(file1.getPath());
         if(file1 == null){
             return;
         }
-        selectedFile = file1;
-    }
+        selectedEncodedFile = file1;
+        fileEncoded.setText(file1.getPath());
 
+        if(radioText.isSelected()){
+            try {
+                encoded = FileManager.loadEncoded(file1.getPath());
+                StringBuilder sb = new StringBuilder();
+                for (byte[] block : encoded)
+                    for (byte b : block)
+                        sb.append(String.format("%02X", b));
+                messageToDecode.setText(sb.toString());
+            } catch (Exception e) {
+                messageToDecode.setText("Błąd odczytu: " + e.getMessage());
+            }
+        }
+    }
 
     @FXML
     public void saveFile(ActionEvent event) {
-        String filename = fileSave.getText().trim();
-        if (filename.isEmpty()) return;
+        String text = messageToEncode.getText();
+        if (text == null || text.trim().isEmpty()) {
+            showAlert("Brak tekstu", "Brak tekstu do zapisania.");
+            return;
+        }
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Zapisz plik");
+        File filename = fileChooser.showSaveDialog(fileSave.getScene().getWindow());
+        if (filename == null) return;
         try {
-            FileManager.saveText(filename, messageToEncode.getText());
+            FileManager.saveText(filename.getPath(), text);
+            fileSave.setText(filename.getPath());
         } catch (Exception e) {
             messageToEncode.setText("Błąd zapisu: " + e.getMessage());
         }
     }
 
     @FXML
-    public void openEncodedFile(ActionEvent event) {
-        String filename = fileEncoded.getText().trim();
-        if (filename.isEmpty()) return;
-        try {
-            encoded = FileManager.loadEncoded(filename);
-            StringBuilder sb = new StringBuilder();
-            for (byte[] block : encoded)
-                for (byte b : block)
-                    sb.append(String.format("%02X", b));
-            messageToDecode.setText(sb.toString());
-        } catch (Exception e) {
-            messageToDecode.setText("Błąd odczytu: " + e.getMessage());
-        }
-    }
-
-    @FXML
     public void saveEncodedFile(ActionEvent event) {
-        String filename = fileEncodedToSave.getText().trim();
-        if (filename.isEmpty() || encoded == null) return;
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Zapisz plik z szyfrogramem");
+        File filename = fileChooser.showSaveDialog(fileEncodeOpen.getScene().getWindow());
+        if (filename == null || encoded == null) return;
         try {
-            FileManager.saveEncoded(filename, encoded);
+            FileManager.saveEncoded(filename.getPath(), encoded);
+            fileEncodedToSave.setText(filename.getPath());
         } catch (Exception e) {
             messageToDecode.setText("Błąd zapisu: " + e.getMessage());
         }

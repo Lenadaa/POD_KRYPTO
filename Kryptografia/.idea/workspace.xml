@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eb32c5c-aec5-450b-925d-9c350f608900" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../krypto_ola/krypto/.idea/checkstyle-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/glorp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaszyfrowany_glorp" beforeDir="false" />
     </list>
     <list id="04a6c78c-fb1a-4096-9649-10ff6c24270e" name="Changes by izabe" comment="" />
     <option name="SHOW_DIALOG" value="false" />
