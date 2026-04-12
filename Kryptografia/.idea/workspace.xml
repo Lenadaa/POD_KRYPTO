@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4eb32c5c-aec5-450b-925d-9c350f608900" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Messege.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/src/test/java/MessegeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/BitOpertions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/test/java/DesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/View/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/resources/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/resources/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../krypto_ola/krypto/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glorp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zaszyfrowany_glorp" beforeDir="false" />
     </list>
     <list id="04a6c78c-fb1a-4096-9649-10ff6c24270e" name="Changes by izabe" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -104,7 +97,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "testowanie__asia",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/JOrli/OneDrive/Pulpit/Sems 4/POD_KRYPTO/Kryptografia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -112,10 +105,10 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/JOrli/OneDrive/Pulpit/Sems 4/POD_KRYPTO/Kryptografia/Model/src/main/java/pl/kryptografia/Main.java",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15456507",
     "project.structure.side.proportion": "0.44712645",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "settings.editor.selected.configurable": "fileTemplates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -233,6 +226,10 @@
       <workItem from="1774710348810" duration="176000" />
       <workItem from="1774711044468" duration="2914000" />
       <workItem from="1774890355016" duration="3492000" />
+      <workItem from="1775843419915" duration="800000" />
+      <workItem from="1775935122261" duration="39000" />
+      <workItem from="1776019603663" duration="4611000" />
+      <workItem from="1776024937518" duration="2261000" />
     </task>
     <servers />
   </component>

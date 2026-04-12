@@ -2,14 +2,17 @@ package pl.kryptografia.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import javafx.stage.FileChooser;
 import pl.kryptografia.Des;
+import pl.kryptografia.FileDao;
 import pl.kryptografia.FileManager;
 import pl.kryptografia.Messege;
 
-import javax.management.DescriptorAccess;
-import java.util.logging.FileHandler;
+import java.io.File;
+import java.io.IOException;
 
 public class Controller {
     @FXML private Button encodeFx;
@@ -24,32 +27,65 @@ public class Controller {
     @FXML private TextField fileEncoded;
     @FXML private TextField file;
     @FXML private TextField fileEncodedToSave;
+    @FXML private TextField errorMess;
 
     @FXML private Button fileToSave;
     @FXML private Button fileChoose1;
     @FXML private Button fileOpen;
     @FXML private Button fileEncodeOpen;
+
+    @FXML private RadioButton radioText;
+    @FXML private RadioButton radioFile;
+
+
     private Des des = new Des();
     private byte[][] encoded;
     private byte[] K;
-
+    private File selectedFile;
     @FXML
     public void encode(ActionEvent event) {
-        String message = messageToEncode.getText();
-        Messege messege = new Messege(message);
-        encoded = messege.encodeMessage(K);
-        StringBuilder sb = new StringBuilder();
-        for (byte b : encoded[0])
-            sb.append(String.format("%02X", b));
-        messageToDecode.setText(sb.toString());
+        if(radioText.isSelected()){
+            String message = messageToEncode.getText();
+            Messege messege = new Messege(message);
+            encoded = messege.encodeMessage(K);
+            StringBuilder sb = new StringBuilder();
+            for (byte b : encoded[0])
+                sb.append(String.format("%02X", b));
+            messageToDecode.setText(sb.toString());
+        }
+        if(radioFile.isSelected()){
+            if(selectedFile == null){
+                errorMess.setText("Nie wybrano pliku");
+            }
+            FileDao dao = new FileDao(selectedFile.getPath());
+            try {
+                dao.write(K);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 
     @FXML
     public void decode(ActionEvent event) {
-        String message = messageToDecode.getText();
-        Messege mess = new Messege(message);
-        String decoded = mess.decodeMessage(encoded, K);
-        messageToEncode.setText(decoded);
+        if(radioText.isSelected()){
+            String message = messageToDecode.getText();
+            Messege mess = new Messege(message);
+            String decoded = mess.decodeMessage(encoded, K);
+            messageToEncode.setText(decoded);
+        }
+        if(radioFile.isSelected()){
+            if(selectedFile == null){
+                errorMess.setText("Nie wybrano pliku");
+            }
+            FileDao dao = new FileDao(selectedFile.getPath());
+            try {
+                dao.read(K);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @FXML
@@ -61,15 +97,25 @@ public class Controller {
 
     @FXML
     public void openFile(ActionEvent event) {
-        String filename = file.getText().trim();
-        if (filename.isEmpty()) return;
-        try {
-            String text = FileManager.loadText(filename);
-            messageToEncode.setText(text);
-        } catch (Exception e) {
-            messageToEncode.setText("Błąd odczytu: " + e.getMessage());
+        FileChooser fileChoose = new FileChooser();
+        File file1 = fileChoose.showOpenDialog(fileOpen.getScene().getWindow());
+        file.setText(file1.getPath());
+        if(file1 == null){
+            return;
         }
+        selectedFile = file1;
     }
+    @FXML
+    public void openFileDecode(ActionEvent event) {
+        FileChooser fileChoose = new FileChooser();
+        File file1 = fileChoose.showOpenDialog(fileOpen.getScene().getWindow());
+        fileEncoded.setText(file1.getPath());
+        if(file1 == null){
+            return;
+        }
+        selectedFile = file1;
+    }
+
 
     @FXML
     public void saveFile(ActionEvent event) {
