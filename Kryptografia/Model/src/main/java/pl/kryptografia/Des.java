@@ -220,7 +220,41 @@ public class Des {
 
     public byte[] encode(byte[] message, byte[] key) {
         message = addPadding(message);
-        byte[] messegeIP = tranformArray(message, IP);
+        byte[] result = new byte[message.length];
+
+        for (int i = 0; i < message.length; i += 8) {
+            byte[] block = new byte[8];
+            System.arraycopy(message, i, block, 0, 8);
+
+            byte[] encryptedBlock = encodeBlock(block, key);
+            System.arraycopy(encryptedBlock, 0, result, i, 8);
+        }
+
+        return result;
+    }
+
+    public byte[] decode(byte[] message, byte[] key) {
+        if (message.length % 8 != 0) {
+            throw new IllegalArgumentException("Długość zaszyfrowanej wiadomości musi być wielokrotnością 8");
+        }
+        byte[] result = new byte[message.length];
+        for (int i = 0; i < message.length; i += 8) {
+            byte[] block = new byte[8];
+            System.arraycopy(message, i, block, 0, 8);
+
+            byte[] decryptedBlock = decodeBlock(block, key);
+            System.arraycopy(decryptedBlock, 0, result, i, 8);
+        }
+
+        return removePadding(result);
+    }
+
+    private byte[] encodeBlock(byte[] block, byte[] key) {
+        if (block.length != 8) {
+            throw new IllegalArgumentException("Blok musi mieć dokładnie 8 bajtów");
+        }
+
+        byte[] messegeIP = tranformArray(block, IP);
         byte[][] keys = subKeys(key);
 
         byte[] L = bits.splitBit(messegeIP, 0, 32);
@@ -246,8 +280,13 @@ public class Des {
         byte[] R16L16 = bits.joinBlockOfBits(R, 32, L, 32);
         return tranformArray(R16L16, IP_INV);
     }
-    public byte[] decode(byte[] message, byte[] key) {
-        byte[] messegeIP = tranformArray(message, IP);
+
+    private byte[] decodeBlock(byte[] block, byte[] key) {
+        if (block.length != 8) {
+            throw new IllegalArgumentException("Blok musi mieć dokładnie 8 bajtów");
+        }
+
+        byte[] messegeIP = tranformArray(block, IP);
         byte[][] keys = subKeys(key);
 
         byte[] L = bits.splitBit(messegeIP, 0, 32);
@@ -272,5 +311,25 @@ public class Des {
 
         byte[] R16L16 = bits.joinBlockOfBits(R, 32, L, 32);
         return tranformArray(R16L16, IP_INV);
+    }
+
+    private byte[] removePadding(byte[] message) {
+        if (message == null || message.length == 0) {
+            return message;
+        }
+
+        int padLen = message[message.length - 1] & 0xFF;
+
+        if (padLen < 1 || padLen > 8 || padLen > message.length) {
+            throw new IllegalArgumentException("Niepoprawny padding");
+        }
+
+        for (int i = message.length - padLen; i < message.length; i++) {
+            if ((message[i] & 0xFF) != padLen) {
+                throw new IllegalArgumentException("Niepoprawny padding");
+            }
+        }
+
+        return Arrays.copyOf(message, message.length - padLen);
     }
 }
