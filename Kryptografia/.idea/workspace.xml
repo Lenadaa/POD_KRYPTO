@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4eb32c5c-aec5-450b-925d-9c350f608900" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Messege.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Messege.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/src/test/java/MessegeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/test/java/MessegeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../krypto_ola/krypto/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../krypto_ola/krypto/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="04a6c78c-fb1a-4096-9649-10ff6c24270e" name="Changes by izabe" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -261,6 +266,11 @@
           <line>204</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/Des.java</url>
+          <line>255</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Model/src/test/java/DesTest.java</url>
           <line>203</line>
@@ -290,7 +300,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileDao.java</url>
-          <line>93</line>
+          <line>32</line>
           <properties class="pl.kryptografia.FileDao" method="outputToFile">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

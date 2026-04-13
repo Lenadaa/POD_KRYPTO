@@ -2,6 +2,7 @@ package pl.kryptografia;
 import pl.kryptografia.BitOpertions;
 
 import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -75,9 +76,10 @@ public class Des {
         return IP;
     }
 
-    public byte[] randKey(){
-        BigInteger bigInteger = new BigInteger(64,1,new Random());
-        byte[] k = bigInteger.toByteArray();
+    public byte[] randKey() {
+        byte[] k = new byte[8];
+        SecureRandom random = new SecureRandom();
+        random.nextBytes(k);
         return k;
     }
     public String byteToHex(byte[] num) {
@@ -205,8 +207,19 @@ public class Des {
 
         return result;
     }
+    private byte[] addPadding(byte[] message) {
+        int blockSize = 8;
+        int padLen = blockSize - (message.length % blockSize);
+        byte[] padded = new byte[message.length + padLen];
+        System.arraycopy(message, 0, padded, 0, message.length);
+        for (int i = message.length; i < padded.length; i++) {
+            padded[i] = (byte) padLen;
+        }
+        return padded;
+    }
 
     public byte[] encode(byte[] message, byte[] key) {
+        message = addPadding(message);
         byte[] messegeIP = tranformArray(message, IP);
         byte[][] keys = subKeys(key);
 

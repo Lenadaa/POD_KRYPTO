@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 
 public class FileDao{
     private final String file;
@@ -18,85 +19,54 @@ public class FileDao{
         return null;
     }
 
-    private byte[] padding(byte[] data){
-        int padding = 8 - (data.length % 8);
-        if(padding == 0){
-            padding = 8;
-        }
-        byte[] result = new byte[data.length + padding];
-        System.arraycopy(data,0,result,0,data.length);
-
-        for(int i = data.length; i<result.length;i++){
-            result[i] = (byte) padding;
-        }
-        return result;
-    }
-    private byte[] removePadding(byte[] data){
-        if(data == null || data.length ==0){
-            return data;
-        }
-
-        int padding = data[data.length-1] & 0xFF;
-
-        if(padding < 1 || padding > 8 || padding > data.length){
-            return data;
-        }
-
-        for(int i = data.length - padding;i<data.length;i++){
-            if((data[i] & 0xFF) != padding){
-                return data;
-            }
-        }
-
-        byte[] result = new byte[data.length - padding];
-        System.arraycopy(data,0,result,0,result.length);
-        return result;
-
-
-    }
-
     public void write(byte[] key) throws IOException {
         Path input = Path.of(file);
         byte[] data = Files.readAllBytes(input);
-
-        byte[] padded = padding(data);
-
-        byte[] encode = new byte[padded.length];
-
-        for(int i=0;i<padded.length;i+=8){
-            byte[] block = new byte[8];
-            System.arraycopy(padded,i,block,0,8);
-
-            byte[] encodeBlock = des.encode(block,key);
-            System.arraycopy(encodeBlock,0,encode,i,8);
-        }
-        this.output = encode;
+        this.output = encrypteBlocks(data,key);
     }
 
     public void read(byte[] key) throws IOException{
         Path input = Path.of(file);
-
         byte[] encoded = Files.readAllBytes(input);
-
-        byte[] decoded = new byte[encoded.length];
-
-        for(int i =0;i<encoded.length;i+=8){
-            byte[] block = new byte[8];
-            System.arraycopy(encoded,i,block,0,8);
-
-            byte[] decodedBlock = des.decode(block,key);
-            System.arraycopy(decodedBlock,0,decoded,i,8);
-        }
-
-        byte[] removePad = removePadding(decoded);
-        this.output = removePad;
+        this.output = decrypteBlocks(encoded,key);
     }
-    public void outputToFile(byte[] key, String output) throws IOException{
+    public void outputToFile(String output) throws IOException{
         File file = new File(output);
         file.createNewFile();
         Path path = Path.of(output);
         Files.write(path,this.output);
     }
+
+    private byte[] encrypteBlocks(byte[] data, byte[] key){
+        int blockSize = 8;
+        int pad = blockSize - (data.length % blockSize);
+        byte[] padded = new byte[data.length + pad];
+        System.arraycopy(data,0,padded,0,data.length);
+        for (int i = data.length; i < padded.length; i++) {
+            padded[i] = (byte) pad;
+        }
+
+        byte[] result = new byte[padded.length];
+        for (int i = 0; i < padded.length; i += blockSize) {
+            byte[] block = Arrays.copyOfRange(padded, i, i + blockSize);
+            byte[] encoded = des.encode(block,key);
+            System.arraycopy(encoded, 0, result, i, blockSize);
+        }
+        return result;
+    }
+
+    private byte[] decrypteBlocks(byte[] data, byte[] key){
+        int blockSize = 8;
+        byte[] result = new byte[data.length];
+        for (int i = 0; i < data.length; i += blockSize) {
+            byte[] block = Arrays.copyOfRange(data, i, i + blockSize);
+            byte[] decoded = des.decode(block,key);
+            System.arraycopy(decoded, 0, result, i, blockSize);
+        }
+        int pad = result[result.length - 1] & 0xFF;
+        return Arrays.copyOf(result, result.length - pad);
+    }
+
     public byte[] getOutput(){
         return output;
     }

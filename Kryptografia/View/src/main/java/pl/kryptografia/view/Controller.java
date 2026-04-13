@@ -40,11 +40,12 @@ public class Controller {
     private final ToggleGroup modeGroup = new ToggleGroup();
 
     private Des des = new Des();
-    private byte[][] encoded;
+    private byte[] encoded;
     private byte[] K;
     private File selectedFile;
     private byte[] encodedFile;
     private byte[] decodedFile;
+    private byte[] loadBytes;
     @FXML
     public void initialize() {
         radioText.setToggleGroup(modeGroup);
@@ -113,7 +114,7 @@ public class Controller {
             Messege messege = new Messege(message);
             encoded = messege.encodeMessage(K);
             StringBuilder sb = new StringBuilder();
-            for (byte b : encoded[0])
+            for (byte b : encoded)
                 sb.append(String.format("%02X", b));
             messageToDecode.setText(sb.toString());
         }
@@ -125,7 +126,6 @@ public class Controller {
             FileDao dao = new FileDao(selectedFile.getPath());
             try {
                 dao.write(K);
-                messageToDecode.setText(dao.getOutput().toString() + ": Zaszyfrowano");
                 this.encodedFile = dao.getOutput();
 
                 showInfoAlert("Sukces", "Plik został zaszyfrowany.");
@@ -171,6 +171,7 @@ public class Controller {
     public void generateKey(ActionEvent event) {
         byte[] key = des.randKey();
         this.K = key;
+        System.out.println(K.length);
         genetorKey.setText(des.byteToHex(K));
     }
 
@@ -218,6 +219,7 @@ public class Controller {
             if (outputFile == null) {
                 return;
             }
+            fileSave.setText(outputFile.getAbsolutePath());
 
             String path = outputFile.getAbsolutePath();
 
@@ -236,6 +238,7 @@ public class Controller {
 
             FileChooser fileChooser = new FileChooser();
             File output = fileChooser.showSaveDialog(fileSave.getScene().getWindow());
+            fileSave.setText(output.getAbsolutePath());
             if (output == null) {
                 return;
             }
@@ -265,7 +268,7 @@ public class Controller {
             String path = outputFile.getAbsolutePath();
             String extension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf(".") + 1);
             path = path + "." + extension + "." + "enc";
-
+            fileEncodedToSave.setText(path);
             try {
                 Files.write(Path.of(path), encodedFile);
             } catch (IOException e) {
@@ -281,6 +284,7 @@ public class Controller {
 
             FileChooser fileChooser = new FileChooser();
             File output = fileChooser.showSaveDialog(fileSave.getScene().getWindow());
+            fileEncodedToSave.setText(output.getAbsolutePath());
             if (output == null) {
                 return;
             }

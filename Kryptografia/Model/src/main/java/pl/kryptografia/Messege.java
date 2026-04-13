@@ -1,5 +1,7 @@
 package pl.kryptografia;
 
+import java.nio.charset.StandardCharsets;
+
 public class Messege {
     private String messege;
     public Messege(String messege) {
@@ -11,46 +13,19 @@ public class Messege {
     }
 
     public byte[] messegeToBytes() {
-        byte[] result = new byte[this.messege.length()];
-        for (int i = 0; i < messege.length(); i++) {
-            result[i] = (byte) messege.charAt(i);
-        }
+        byte[] result = messege.getBytes(StandardCharsets.UTF_8);
         return result;
     }
 
-    public byte[][] chunkMessegeToBytes() {
-        int paddingLenght = ((this.messege.length() + 8) / 8)*8;
-        byte[] padding = new byte[paddingLenght];
-        byte[] msgBytes = messege.getBytes();
-        //Do wypełniania zerami
-        System.arraycopy(msgBytes, 0, padding, 0, msgBytes.length);
-        int chunk = paddingLenght / 8;
-        byte[][] chunks = new byte[chunk][8];
-        for (int i = 0; i < chunk; i++) {
-            System.arraycopy(padding, i*8, chunks[i], 0, 8);
-        }
-        return chunks;
-    }
-
-    public byte[][] encodeMessage(byte[] key){
+    public byte[] encodeMessage(byte[] key){
         Des des = new Des();
-        byte[][] chunks = chunkMessegeToBytes();
-        byte[][] encode = new byte[chunks.length][];
-        for (int i = 0; i < chunks.length; i++) {
-            encode[i] = des.encode(chunks[i],key);
-        }
+        byte[] encode = des.encode(messegeToBytes(),key);
         return encode;
     }
 
-    public String decodeMessage(byte[][] encoded, byte[] key) {
-        StringBuilder sb = new StringBuilder();
+    public String decodeMessage(byte[] encoded, byte[] key) {
         Des des = new Des();
-        for (byte[] block : encoded) {
-            byte[] decoded = des.decode(block, key);
-            sb.append(new String(decoded));
-        }
-        String result = sb.toString();
-        int end = result.indexOf('\0');
-        return end == -1 ? result : result.substring(0, end);
+        byte[] decode = des.decode(encoded,key);
+        return new String(decode,StandardCharsets.UTF_8);
     }
 }

@@ -27,7 +27,7 @@ public class MessegeTest {
         Messege mes = new Messege("Glorp");
         byte[] K = hexToBytes("133457799BBCDFF1");
 
-        byte[][] encoded = mes.encodeMessage(K);
+        byte[] encoded = mes.encodeMessage(K);
         String decoded = mes.decodeMessage(encoded, K);
 
         Assert.assertEquals(mes.getMessege(), decoded);
@@ -38,7 +38,7 @@ public class MessegeTest {
         Des des = new Des();
         Messege mes = new Messege("Glorp");
         byte[] key = des.randKey();
-        byte[][] encoded = mes.encodeMessage(key);
+        byte[] encoded = mes.encodeMessage(key);
         String decoded = mes.decodeMessage(encoded, key);
         Assert.assertEquals(mes.getMessege(), decoded);
     }
