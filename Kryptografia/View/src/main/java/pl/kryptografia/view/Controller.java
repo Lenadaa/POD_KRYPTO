@@ -61,11 +61,42 @@ public class Controller {
         alert.showAndWait();
     }
 
+    private void showInfoAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private byte[] hexStringToByteArray(String s) {
+        byte[] data = new byte[s.length() / 2];
+        for (int i = 0; i < s.length(); i += 2) {
+            data[i / 2] = (byte) Integer.parseInt(s.substring(i, i + 2), 16);
+        }
+        return data;
+    }
+
     private boolean validateKey() {
-        if (K == null || K.length == 0) {
+        String keyText = genetorKey.getText().trim();
+
+        if (keyText.isEmpty()) {
             showAlert("Brak klucza", "Najpierw wygeneruj klucz.");
             return false;
         }
+
+        //0 - 9, A - F, a - f
+        if (!keyText.matches("[0-9A-Fa-f]+")) {
+            showAlert("Błędny klucz", "Klucz zawiera niedozwolone znaki.");
+            return false;
+        }
+
+        if (keyText.length() != 16) {
+            showAlert("Błędny klucz", "Klucz DES musi się składać z dokładnie 16 znaków heksadecymalnych.");
+            return false;
+        }
+
+        this.K = hexStringToByteArray(keyText);
         return true;
     }
 
@@ -96,6 +127,8 @@ public class Controller {
                 dao.write(K);
                 messageToDecode.setText(dao.getOutput().toString() + ": Zaszyfrowano");
                 this.encodedFile = dao.getOutput();
+
+                showInfoAlert("Sukces", "Plik został zaszyfrowany.");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -126,6 +159,8 @@ public class Controller {
             try {
                 dao.read(K);
                 this.decodedFile = dao.getOutput();
+
+                showInfoAlert("Sukces", "Plik został odszyfrowany.");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -149,6 +184,7 @@ public class Controller {
         file.setText(file1.getPath());
         selectedFile = file1;
     }
+
     @FXML
     public void fileEncode(ActionEvent event) {
         FileChooser fileChoose = new FileChooser();
@@ -158,7 +194,17 @@ public class Controller {
         }
         fileEncoded.setText(file1.getPath());
         selectedFile = file1;
+
+        if (radioText.isSelected()) {
+            try {
+                String content = Files.readString(file1.toPath());
+                messageToDecode.setText(content);
+            } catch (IOException e) {
+                showAlert("Błąd", "Nie udało się odczytać zawartości pliku szyfrogramu.");
+            }
+        }
     }
+
     @FXML
     public void saveDecoded(ActionEvent event) {
         if(radioFile.isSelected()){

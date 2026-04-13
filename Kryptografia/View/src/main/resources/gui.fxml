@@ -19,7 +19,7 @@
             <Font name="System Bold" size="47.0" />
          </font>
       </Text>
-      <TextField id="keyField" fx:id="genetorKey" editable="false" layoutX="239.0" layoutY="91.0" prefHeight="25.0" prefWidth="122.0" promptText="Klucz heksadecymalnie" />
+      <TextField id="keyField" fx:id="genetorKey" layoutX="239.0" layoutY="91.0" prefHeight="25.0" prefWidth="122.0" promptText="Klucz heksadecymalnie" />
       <TextField fx:id="fileSave" layoutX="23.0" layoutY="355.0" prefHeight="18.0" prefWidth="122.0" promptText="Nazwa pliku z tekstem" />
       <Button fx:id="fileToSave" layoutX="152.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveDecoded" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Zapisz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <font>
