@@ -184,6 +184,7 @@ public class Controller {
         }
         file.setText(file1.getPath());
         selectedFile = file1;
+
     }
 
     @FXML
