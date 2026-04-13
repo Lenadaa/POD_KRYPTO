@@ -185,6 +185,14 @@ public class Controller {
         file.setText(file1.getPath());
         selectedFile = file1;
 
+        if (radioText.isSelected()) {
+            try {
+                String content = Files.readString(file1.toPath());
+                messageToEncode.setText(content);
+            } catch (IOException e) {
+                showAlert("Błąd", "Nie udało się odczytać zawartości pliku.");
+            }
+        }
     }
 
     @FXML
