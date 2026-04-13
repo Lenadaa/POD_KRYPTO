@@ -8,6 +8,7 @@ import java.nio.file.Path;
 public class FileDao{
     private final String file;
     private final Des des = new Des();
+    private byte[] output;
 
     public FileDao(String file){
         this.file = file;
@@ -69,7 +70,7 @@ public class FileDao{
             byte[] encodeBlock = des.encode(block,key);
             System.arraycopy(encodeBlock,0,encode,i,8);
         }
-        Files.write(input,encode);
+        this.output = encode;
     }
 
     public void read(byte[] key) throws IOException{
@@ -88,6 +89,18 @@ public class FileDao{
         }
 
         byte[] removePad = removePadding(decoded);
-        Files.write(input,removePad);
+        this.output = removePad;
+    }
+    public void outputToFile(byte[] key, String output) throws IOException{
+        File file = new File(output);
+        file.createNewFile();
+        Path path = Path.of(output);
+        Files.write(path,this.output);
+    }
+    public byte[] getOutput(){
+        return output;
+    }
+    public void setOutput(byte[] output){
+        this.output = output;
     }
 }

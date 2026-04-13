@@ -21,7 +21,7 @@
       </Text>
       <TextField id="keyField" fx:id="genetorKey" editable="false" layoutX="239.0" layoutY="91.0" prefHeight="25.0" prefWidth="122.0" promptText="Klucz heksadecymalnie" />
       <TextField fx:id="fileSave" layoutX="23.0" layoutY="355.0" prefHeight="18.0" prefWidth="122.0" promptText="Nazwa pliku z tekstem" />
-      <Button fx:id="fileToSave" layoutX="152.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveFile" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Zapisz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <Button fx:id="fileToSave" layoutX="152.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveDecoded" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Zapisz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <font>
             <Font size="10.0" />
          </font>
@@ -37,7 +37,7 @@
          </font>
       </Text>
       <TextField fx:id="fileEncoded" layoutX="389.0" layoutY="163.0" prefHeight="18.0" prefWidth="122.0" promptText="Nazwa pliku z szyfrogramem" />
-      <Button fx:id="fileChoose1" layoutX="518.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveEncodedFile" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Zapisz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <Button fx:id="fileChoose1" layoutX="518.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveEncoded" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Zapisz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <font>
             <Font size="10.0" />
          </font>
@@ -48,13 +48,13 @@
          </font>
       </Text>
       <TextField fx:id="file" layoutX="23.0" layoutY="163.0" prefHeight="25.0" prefWidth="122.0" promptText="Nazwa pliku z tekstem" />
-      <Button fx:id="fileOpen" layoutX="148.0" layoutY="163.0" mnemonicParsing="false" onAction="#openFile" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Otwórz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <Button fx:id="fileOpen" layoutX="148.0" layoutY="163.0" mnemonicParsing="false" onAction="#openFileToEncode" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Otwórz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
       <TextField fx:id="fileEncodedToSave" layoutX="389.0" layoutY="355.0" prefHeight="18.0" prefWidth="122.0" promptText="Nazwa pliku z tekstem" />
-      <Button fx:id="fileEncodeOpen" layoutX="518.0" layoutY="163.0" mnemonicParsing="false" onAction="#openFileDecode" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Otwórz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+      <Button fx:id="fileEncodeOpen" layoutX="518.0" layoutY="163.0" mnemonicParsing="false" onAction="#fileEncode" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #388218; -fx-text-fill: #efe9a2; -fx-font-style: UPPERCASE;" text="Otwórz" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
          <font>
             <Font size="10.0" />
          </font>
