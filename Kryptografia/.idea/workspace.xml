@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4eb32c5c-aec5-450b-925d-9c350f608900" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/java/pl/kryptografia/FileManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/View/src/main/resources/gui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/src/main/resources/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.jpg.enc" beforeDir="false" />
     </list>
     <list id="04a6c78c-fb1a-4096-9649-10ff6c24270e" name="Changes by izabe" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +227,7 @@
       <workItem from="1775935122261" duration="39000" />
       <workItem from="1776019603663" duration="4611000" />
       <workItem from="1776024937518" duration="2261000" />
-      <workItem from="1776089551790" duration="7823000" />
+      <workItem from="1776089551790" duration="8590000" />
     </task>
     <servers />
   </component>

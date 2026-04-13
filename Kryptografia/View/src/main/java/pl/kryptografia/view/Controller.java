@@ -173,7 +173,7 @@ public class Controller {
                 return;
             }
 
-            String path = outputFile.getName();
+            String path = outputFile.getAbsolutePath();
 
             try {
                 Files.write(Path.of(path), decodedFile);
