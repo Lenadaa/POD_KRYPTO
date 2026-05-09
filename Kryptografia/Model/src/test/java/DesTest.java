@@ -19,7 +19,41 @@ public class DesTest {
         des = new Des();
         bits = new BitOpertions();
     }
+    @Test
+    public void testWeakKeyProperty() {
+        Des des = new Des();
+        // Słaby klucz: wszystkie bity po PC-1 są stałe
+        byte[] weakKey = new byte[]{0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
+        byte[] message = "12345678".getBytes(); // Dokładnie 8 bajtów (jeden blok)
 
+        // Szyfrujemy pierwszy raz
+        byte[] ciphertext = des.encode(message, weakKey);
+
+        // Używamy DECODE zamiast ENCODE, aby sprawdzić czy klucz zachowuje się tak samo,
+        // LUB szyfrujemy bezpośrednio blok, jeśli chcesz udowodnić E(E(M)) = M.
+
+        // Aby sprawdzić specyficzną cechę słabego klucza (szyfrowanie jest deszyfrowaniem):
+        // Musimy użyć metody, która nie dodaje paddingu przy każdym wywołaniu.
+        byte[][] keys = des.subKeys(weakKey);
+
+        // Ręczne wywołanie procesu na jednym bloku (symulacja E(E(M)))
+        // Wymaga dostępu do encodeBlock lub odpowiedniego przygotowania danych
+        byte[] block = new byte[8];
+        System.arraycopy(message, 0, block, 0, 8);
+
+        // To jest właściwy test dla słabego klucza w DES:
+        byte[] enc1 = des.encode(message, weakKey);
+        // Deszyfrowanie słabym kluczem przy użyciu funkcji ENCODE (bo E=D)
+        // Uwaga: musimy pamiętać, że encode doda padding, więc wynik będzie dłuższy
+        byte[] enc2 = des.encode(enc1, weakKey);
+
+        // Najprostsza metoda naprawy w Twoim teście:
+        // Porównaj tylko pierwsze 8 bajtów wyniku
+        byte[] resultShort = new byte[8];
+        System.arraycopy(enc2, 0, resultShort, 0, 8);
+
+        assertArrayEquals(message, resultShort);
+    }
     @Test
     public void testGetBitAt() {
         byte[] data = { (byte) 0b10110000 };
