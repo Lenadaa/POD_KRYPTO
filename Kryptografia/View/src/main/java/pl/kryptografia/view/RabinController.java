@@ -31,7 +31,6 @@ public class RabinController {
     private Rabin rabin = new Rabin();
     private File selectedFile;
 
-    // ZMIANA: Typ na tablicę BigInteger[] zgodnie z nową wersją klasy Rabin
     private BigInteger[] encodedResult;
     private byte[] decodedResult;
 
@@ -60,7 +59,6 @@ public class RabinController {
 
     @FXML
     public void genereteKeys(ActionEvent event) {
-        // Generujemy klucze (1024 lub 2048 bitów)
         rabin.generateKeys(1024);
         pKey.setText(rabin.getP().toString());
         qKey.setText(rabin.getQ().toString());
@@ -88,7 +86,6 @@ public class RabinController {
                 dataToEncrypt = Files.readAllBytes(selectedFile.toPath());
             }
 
-            // ZMIANA: Wywołanie zwraca tablicę BigInteger[]
             this.encodedResult = rabin.encrypt(dataToEncrypt);
 
             messageToDecode.setText("Zaszyfrowano bloków: " + encodedResult.length);
@@ -110,7 +107,6 @@ public class RabinController {
             BigInteger[] toDecrypt;
             String input = messageToDecode.getText();
 
-            // Parsowanie szyfrogramu z formatu tekstowego (oddzielone przecinkami)
             if (input != null && input.contains(",")) {
                 toDecrypt = Arrays.stream(input.split(","))
                         .map(String::trim)
@@ -126,7 +122,6 @@ public class RabinController {
                 return;
             }
 
-            // ZMIANA: Wywołanie decrypt przyjmuje tablicę BigInteger[]
             this.decodedResult = rabin.decrypt(toDecrypt);
 
             if (radioText.isSelected()) {
@@ -150,7 +145,6 @@ public class RabinController {
         FileChooser fc = new FileChooser();
         File f = fc.showSaveDialog(null);
         if (f != null) {
-            // ZMIANA: Streamowanie z tablicy Arrays.stream()
             String contentToSave = Arrays.stream(encodedResult)
                     .map(BigInteger::toString)
                     .collect(Collectors.joining(","));
