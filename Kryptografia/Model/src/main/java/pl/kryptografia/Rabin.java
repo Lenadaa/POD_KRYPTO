@@ -14,9 +14,17 @@ public class Rabin {
     private static final BigInteger THREE = BigInteger.valueOf(3);
     private static final BigInteger FOUR = BigInteger.valueOf(4);
 
-    public BigInteger getN() { return n; }
-    public BigInteger getP() { return p; }
-    public BigInteger getQ() { return q; }
+    public BigInteger getN() {
+        return n;
+    }
+
+    public BigInteger getP() {
+        return p;
+    }
+
+    public BigInteger getQ() {
+        return q;
+    }
 
     public void generateKeys(int bitLength) {
         do {
@@ -42,7 +50,7 @@ public class Rabin {
             int length = Math.min(blockSize, data.length - start);
 
             byte[] block = new byte[length + 3];
-            block[0] = (byte) length; 
+            block[0] = (byte) length;
             System.arraycopy(data, start, block, 1, length);
 
             byte lastDataByte = data[start + length - 1];
@@ -58,22 +66,21 @@ public class Rabin {
     public byte[] decode(BigInteger[] encrypted) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         int fullBlockSize = (n.bitLength() / 8);
-
-        BigInteger ep = p.add(BigInteger.ONE).divide(FOUR);
-        BigInteger eq = q.add(BigInteger.ONE).divide(FOUR);
-        BigInteger yp = p.modInverse(q);
-        BigInteger yq = q.modInverse(p);
+        BigInteger a = q.multiply(q.modInverse(p));
+        BigInteger b = p.multiply(p.modInverse(q));
 
         for (BigInteger c : encrypted) {
-            BigInteger mp = c.modPow(ep, p);
-            BigInteger mq = c.modPow(eq, q);
+            BigInteger m1 = c.modPow(p.add(BigInteger.ONE).divide(FOUR), p);
+            BigInteger m2 = p.subtract(m1).mod(p);
+            BigInteger m3 = c.modPow(q.add(BigInteger.ONE).divide(FOUR), q);
+            BigInteger m4 = q.subtract(m3).mod(q);
 
-            BigInteger r1 = yq.multiply(q).multiply(mp).add(yp.multiply(p).multiply(mq)).mod(n);
-            BigInteger r2 = n.subtract(r1);
-            BigInteger r3 = yq.multiply(q).multiply(mp).subtract(yp.multiply(p).multiply(mq)).mod(n).add(n).mod(n);
-            BigInteger r4 = n.subtract(r3).mod(n);
+            BigInteger M1 = a.multiply(m1).add(b.multiply(m3)).mod(n);
+            BigInteger M2 = a.multiply(m1).add(b.multiply(m4)).mod(n);
+            BigInteger M3 = a.multiply(m2).add(b.multiply(m3)).mod(n);
+            BigInteger M4 = a.multiply(m2).add(b.multiply(m4)).mod(n);
 
-            BigInteger[] roots = {r1, r2, r3, r4};
+            BigInteger[] roots = {M1, M2, M3, M4};
             boolean found = false;
 
             for (BigInteger root : roots) {
@@ -89,7 +96,7 @@ public class Rabin {
                 }
             }
             if (!found) {
-                throw new RuntimeException("Błąd deszyfrowania: nie znaleziono poprawnego pierwiastka dla bloku.");
+                throw new RuntimeException("Błąd deszyfrowania: nie znaleziono poprawnego pierwiastka.");
             }
         }
         return outputStream.toByteArray();
@@ -106,7 +113,6 @@ public class Rabin {
         while (startPos < block.length && block[startPos] == 0) {
             startPos++;
         }
-
         if (startPos >= block.length) return null;
 
         int dataLength = block[startPos] & 0xFF;
