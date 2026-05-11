@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="960ccfb5-11dc-4cde-84d5-05156ec09a0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Kryptografia/Model/src/main/java/pl/kryptografia/Rabin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Kryptografia/View/src/main/java/pl/kryptografia/view/RabinController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Kryptografia/View/src/main/resources/rabinGui.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Kryptografia/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kryptografia/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Kryptografia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kryptografia/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Kryptografia/Model/src/main/java/pl/kryptografia/BitOpertions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kryptografia/Model/src/main/java/pl/kryptografia/BitOpertions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Kryptografia/Model/src/test/java/DesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kryptografia/Model/src/test/java/DesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Kryptografia/View/src/main/java/pl/kryptografia/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kryptografia/View/src/main/java/pl/kryptografia/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Kryptografia/View/src/main/java/pl/kryptografia/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kryptografia/View/src/main/java/pl/kryptografia/view/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Kryptografia/View/src/main/resources/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kryptografia/View/src/main/resources/gui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="15e7f2af-b180-46cc-b8cc-31b23cc88216" name="Changes by izabe" comment="" />
@@ -87,6 +77,8 @@
       <workItem from="1776105047825" duration="1402000" />
       <workItem from="1777456744715" duration="197000" />
       <workItem from="1778323920807" duration="8000" />
+      <workItem from="1778511114778" duration="3000" />
+      <workItem from="1778511147179" duration="7000" />
     </task>
     <servers />
   </component>

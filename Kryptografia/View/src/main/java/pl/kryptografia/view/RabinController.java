@@ -34,6 +34,8 @@ public class RabinController {
     private BigInteger[] encodedResult;
     private byte[] decodedResult;
 
+
+
     @FXML
     public void initialize() {
         radioText.setToggleGroup(modeGroup);
@@ -86,9 +88,11 @@ public class RabinController {
                 dataToEncrypt = Files.readAllBytes(selectedFile.toPath());
             }
 
-            this.encodedResult = rabin.encrypt(dataToEncrypt);
-
-            messageToDecode.setText("Zaszyfrowano bloków: " + encodedResult.length);
+            this.encodedResult = rabin.encode(dataToEncrypt);
+            StringBuilder sb = new StringBuilder();
+            for (BigInteger b : encodedResult)
+                sb.append(String.format("%02X", b));
+            messageToDecode.setText(sb.toString());
             showInfoAlert("Sukces", "Zaszyfrowano dane (liczba bloków: " + encodedResult.length + ")");
 
         } catch (IOException e) {
@@ -112,7 +116,7 @@ public class RabinController {
                         .map(String::trim)
                         .filter(s -> !s.isEmpty())
                         .map(BigInteger::new)
-                        .toArray(BigInteger[]::new); // Konwersja na tablicę BigInteger[]
+                        .toArray(BigInteger[]::new);
             } else {
                 toDecrypt = this.encodedResult;
             }
@@ -122,7 +126,7 @@ public class RabinController {
                 return;
             }
 
-            this.decodedResult = rabin.decrypt(toDecrypt);
+            this.decodedResult = rabin.decode(toDecrypt);
 
             if (radioText.isSelected()) {
                 messageToEncode.setText(new String(decodedResult, StandardCharsets.UTF_8));
